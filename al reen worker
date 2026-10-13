@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siddiqui - Workers</title>
+<style>
+body{margin:0;font-family:Arial;background:#f2f2f2}
+.header{background:#000;color:#fff;padding:20px;text-align:center}
+.search{padding:15px;text-align:center}
+.search input{width:90%;max-width:400px;padding:12px;border-radius:25px;border:1px solid #ccc}
+.list{max-width:500px;margin:auto;padding:10px}
+.card{background:#fff;padding:15px 20px;border-radius:12px;margin-bottom:10px;display:flex;justify-content:space-between;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+.name{font-weight:bold}
+.place{background:#000;color:#fff;padding:4px 10px;border-radius:20px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="header"><h2>Siddiqui Workers</h2><p>Al-Dhruma Pump</p></div>
+
+<div class="search">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Naam search karo...">
+</div>
+
+<div class="list" id="myList">
+<div class="card"><span class="name">Ayan Siddiqui</span><span class="place">Office</span></div>
+<div class="card"><span class="name">Masuum sahikh</span><span class="place">Pump 1</span></div>
+<div class="card"><span class="name">raiyan shakh </span><span class="place">Pump 2</span></div>
+<div class="card"><span class="name">deepak </span><span class="place">Store</span></div>
+<div class="card"><span class="name">harish </span><span class="place">Washing</span></div>
+</div>
+
+<script>
+function myFunction() {
+  var input = document.getElementById("myInput").value.toUpperCase();
+  var cards = document.getElementById("myList").getElementsByClassName("card");
+  for (var i=0;i<cards.length;i++){
+    var name = cards[i].getElementsByClassName("name")[0].innerText.toUpperCase();
+    if(name.indexOf(input)>-1){cards[i].style.display=""}else{cards[i].style.display="none"}
+  }
+}
+</script>
+</body>
+</html>
